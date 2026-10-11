@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: FilterReading-deployment
+  name: smart-meter-filter-deployment
 spec:
   replicas: 3
   selector:
