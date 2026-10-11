@@ -38,7 +38,7 @@ def callback(message: pubsub_v1.subscriber.message.Message) -> None:
     message.ack()
     if filter_row(data):
         message = json.dumps(data).encode("utf-8")
-        future = pub.publish(topic_path, message, function="result")
+        future = pub.publish(topic_path, message, function="convert")
         future.result()
         print(f"Published filtered message {data}")
     else:
