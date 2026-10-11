@@ -1,0 +1,19 @@
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: FilterReading-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: smart-meter-filter
+  template:
+    metadata:
+      labels:
+        app: smart-meter-filter
+    spec:
+      containers:
+        - image: $SMART_METER_FILTER_IMAGE
+          name: smart-meter-filter
+--- 

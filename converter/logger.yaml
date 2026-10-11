@@ -1,0 +1,19 @@
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ConvertReading-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: smart-meter-converter
+  template:
+    metadata:
+      labels:
+        app: smart-meter-converter
+    spec:
+      containers:
+        - image: $SMART_METER_CONVERTER_IMAGE
+          name: smart-meter-converter
+--- 

@@ -1,0 +1,4 @@
+version: '2'
+services:
+  FilterReading:
+    image: smart-meter-converter
